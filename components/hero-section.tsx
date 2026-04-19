@@ -72,7 +72,7 @@ export function HeroSection() {
               {/* Profile image container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary shadow-2xl shadow-primary/20">
                 <Image
-                  src="https://i.postimg.cc/bJKqb6D5/FB-IMG-1774629084456.jpg"
+                  src="https://i.postimg.cc/jjhgjk0w/wa-255772991908-dp.jpg"
                   alt="TEKNOVA TZ Founder"
                   fill
                   className="object-cover"
@@ -93,4 +93,4 @@ export function HeroSection() {
       </div>
     </section>
   )
-}
+                }
