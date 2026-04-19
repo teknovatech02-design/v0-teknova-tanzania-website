@@ -1,24 +1,31 @@
+"use client"
+
 import Link from "next/link"
 import { Smartphone, Phone, Mail, MapPin } from "lucide-react"
-
-const quickLinks = [
-  { href: "#home", label: "Nyumbani" },
-  { href: "#huduma", label: "Huduma" },
-  { href: "#kuhusu", label: "Kuhusu" },
-  { href: "#blog", label: "Blog" },
-  { href: "#wasiliana", label: "Wasiliana" },
-]
-
-const services = [
-  "Mafunzo ya Software",
-  "Kurekebisha Simu",
-  "Hardware Repair",
-  "Flashing & Unlocking",
-  "Data Recovery",
-  "Speed Optimization",
-]
+import { useLanguage } from "@/lib/language-context"
 
 export function Footer() {
+  const { t } = useLanguage()
+
+  const quickLinks = [
+    { href: "#home", label: t.home },
+    { href: "#huduma", label: t.services },
+    { href: "#kuhusu", label: t.about },
+    { href: "#blog", label: t.blog },
+    { href: "#wasiliana", label: t.contact },
+  ]
+
+  const services = [
+    t.softwareTraining,
+    t.phoneRepair,
+    t.hardwareRepair,
+    t.flashingUnlocking,
+    t.dataRecovery,
+    t.speedOptimization,
+    t.computerTraining,
+    t.cloudServices,
+  ]
+
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-12 md:py-16">
@@ -33,15 +40,14 @@ export function Footer() {
                 TEKNOVA <span className="text-primary">TZ</span>
               </span>
             </Link>
-            <p className="text-muted-foreground text-sm">
-              Kituo chako cha kujifunza teknolojia za simu Tanzania. 
-              Tunatoa mafunzo, huduma, na ushauri wa kitaalamu.
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              {t.footerDescription}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Viungo vya Haraka</h4>
+            <h4 className="text-foreground font-semibold mb-4">{t.quickLinks}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
@@ -58,10 +64,10 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Huduma Zetu</h4>
+            <h4 className="text-foreground font-semibold mb-4">{t.ourServicesFooter}</h4>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service}>
+              {services.map((service, index) => (
+                <li key={index}>
                   <span className="text-muted-foreground text-sm">{service}</span>
                 </li>
               ))}
@@ -70,7 +76,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-foreground font-semibold mb-4">Wasiliana</h4>
+            <h4 className="text-foreground font-semibold mb-4">{t.contactFooter}</h4>
             <ul className="space-y-3">
               <li>
                 <Link 
@@ -105,14 +111,14 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm text-center md:text-left">
-              © TEKNOVA TECH 2026. Haki zote zimehifadhiwa.
+              © TEKNOVA TECH 2026. {t.allRightsReserved}.
             </p>
             <div className="flex items-center gap-6">
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                Sera ya Faragha
+                {t.privacyPolicy}
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                Masharti ya Matumizi
+                {t.termsOfUse}
               </Link>
             </div>
           </div>
