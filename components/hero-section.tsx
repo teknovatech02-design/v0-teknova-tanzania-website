@@ -13,6 +13,7 @@ export function HeroSection() {
     <section id="home" className="pt-24 md:pt-32 pb-16 md:pb-24">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
+          
           {/* Text Content */}
           <div className="space-y-6">
             <div className="inline-block px-4 py-2 bg-primary/10 rounded-full">
@@ -65,6 +66,7 @@ export function HeroSection() {
           {/* Profile Image */}
           <div className="flex justify-center md:justify-end">
             <div className="relative">
+              
               {/* Decorative rings */}
               <div className="absolute inset-0 rounded-full bg-primary/20 animate-pulse" style={{ transform: 'scale(1.15)' }} />
               <div className="absolute inset-0 rounded-full bg-primary/10" style={{ transform: 'scale(1.25)' }} />
@@ -72,7 +74,7 @@ export function HeroSection() {
               {/* Profile image container */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary shadow-2xl shadow-primary/20">
                 <Image
-                  src="https://i.postimg.cc/jjhgjk0w/wa-255772991908-dp.jpg"
+                  src="/me.jpg"   // 🔥 HAPA NDIPO NILIPO FIX
                   alt="TEKNOVA TZ Founder"
                   fill
                   className="object-cover"
@@ -80,7 +82,7 @@ export function HeroSection() {
                 />
               </div>
               
-              {/* Name badge below image */}
+              {/* Name badge */}
               <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center">
                 <div className="bg-card px-6 py-3 rounded-full border-2 border-primary shadow-lg">
                   <span className="text-primary font-bold text-lg">TEKNOVA TECH</span>
@@ -89,8 +91,9 @@ export function HeroSection() {
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
   )
-                }
+}
